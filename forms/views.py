@@ -17,23 +17,15 @@ def custom_create_view(request):
         email_from = settings.EMAIL_HOST_USER
         video = request.FILES['Video']
         recipient_list = form.cleaned_data['Email']
+        
+        email_message = f"{message} \n Your age is {age}"
 
-        mail = EmailMessage(name,message,email_from,[recipient_list])
+        mail = EmailMessage(name,email_message,email_from,[recipient_list])
         mail.attach(video.name,video.read(),video.content_type)
         mail.send()
-
-        #send_mail(name,message,age,email_from,video,recipient_list)
 
         form.save()
     context = {
         'form':form
     }
     return render(request,'user_create.html',context)
-
-'''def email(request):
-    subject = request.POST.get('Message')
-    message = request.POST.get('Name','Age','Message','Video')
-    email_from = settings.EMAIL_HOST_USER
-    recipient_list = ['Email']
-
-    send_mail(subject,message,email_from,recipient_list)'''
