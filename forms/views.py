@@ -24,7 +24,6 @@ def custom_create_view(request):
         mail.attach(video.name,video.read(),video.content_type)
         mail.send()
 
-        form.save()
     context = {
         'form':form
     }

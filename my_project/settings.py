@@ -25,7 +25,7 @@ SECRET_KEY = 'vx!7fp8(nxgfpduh89q%nh&!-8)@3!m+z=k+u4rf&3ifbnk7l_'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['*','sabin-emailbackend.herokuapp.com']
 
 
 # Application definition
