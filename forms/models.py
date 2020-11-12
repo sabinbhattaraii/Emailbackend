@@ -1,5 +1,7 @@
 from django.db import models
 
+from phone_field import PhoneField
+
 # Create your models here.
 
 class CustomUser(models.Model):
@@ -8,3 +10,4 @@ class CustomUser(models.Model):
     Email = models.EmailField()
     Message = models.TextField()
     Video = models.FileField(upload_to='uploads/')
+    Phone = PhoneField(blank=True,help_text='Contact phone number')

@@ -40,6 +40,7 @@ INSTALLED_APPS = [
     
     'forms.apps.FormsConfig',
     'crispy_forms',
+    'phone_field'
 ]
 
 MIDDLEWARE = [
